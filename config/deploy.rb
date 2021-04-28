@@ -11,7 +11,7 @@ set :repo_url, "https://github.com/birs-math/proposals.git"
 set :deploy_to, "/data/proposals-staging"
 
 # Default value for :format is :airbrussh.
-# set :format, :airbrussh
+set :format, :pretty
 
 # You can configure the Airbrussh format using :format_options.
 # These are the defaults.
