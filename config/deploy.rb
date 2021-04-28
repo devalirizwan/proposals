@@ -53,8 +53,8 @@ namespace :deploy do
 
   task :cleanup do
     on roles(:app) do
-      execute "docker stop proposals && docker stop proposals_db && sleep 5"
-      execute "docker rm proposals && docker rm proposals_db && sleep 2"
+      execute "docker stop proposals && sleep 5"
+      execute "docker rm proposals && sleep 2"
     end
   end
 
