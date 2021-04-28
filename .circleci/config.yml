@@ -88,7 +88,6 @@ jobs:
       - run:
           name: Setup SSH keys
           command: |
-            mkdir ~app/.ssh
             chmod 0700 ~app/.ssh
             echo "$SSH_PRIVKEY" > ~app/.ssh/id_ed25519
             chmod 0400 ~app/.ssh/id_ed25519
