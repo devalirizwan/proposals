@@ -127,15 +127,22 @@ workflows:
 
   deploy_to_staging:
     jobs:
-      - run_tests
       - build_image
-      - deploy_to_staging:
+          filters:
+            branches:
+              only: test-deploy
+      - run_tests:
           requires:
             - build_image
+          filters:
+            branches:
+              only: test-deploy
+      - deploy_to_staging:
+          requires:
             - run_tests
           filters:
             branches:
-              only: main
+              only: test-deploy
 
   deploy_to_production:
     jobs:
