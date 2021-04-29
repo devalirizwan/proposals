@@ -127,7 +127,7 @@ workflows:
 
   deploy_to_staging:
     jobs:
-      - build_image
+      - build_image:
           filters:
             branches:
               only: test-deploy
